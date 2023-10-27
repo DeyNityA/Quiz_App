@@ -6,6 +6,7 @@ const path=require('path')
 const mongoose=require('mongoose')
 const userRoutes = require("./routes/userroute");
 
+mongoose.set('strictQuery',false)
 const connectDB = async () => {
     try {
       const conn = await mongoose.connect(process.env.MONGO_URI);
