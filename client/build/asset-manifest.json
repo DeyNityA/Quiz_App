@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/static/css/main.36b9c3d2.css",
+    "main.js": "/static/js/main.d9b75692.js",
+    "static/media/Loader.gif": "/static/media/Loader.8fcabc81148f3e964302.gif",
+    "static/media/clint-patterson-dYEuFB8KQJk-unsplash.jpg": "/static/media/clint-patterson-dYEuFB8KQJk-unsplash.4dad8e9f13515ff08d11.jpg",
+    "index.html": "/index.html",
+    "main.36b9c3d2.css.map": "/static/css/main.36b9c3d2.css.map",
+    "main.d9b75692.js.map": "/static/js/main.d9b75692.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.36b9c3d2.css",
+    "static/js/main.d9b75692.js"
+  ]
+}
