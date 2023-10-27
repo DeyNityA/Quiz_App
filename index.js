@@ -3,8 +3,18 @@ const express=require('express')
 const cors=require('cors')
 const http=require('http')
 const path=require('path')
-require('./db/connection')
+const mongoose=require('mongoose')
 const userRoutes = require("./routes/userroute");
+
+const connectDB = async () => {
+    try {
+      const conn = await mongoose.connect(process.env.MONGO_URI);
+      console.log(`MongoDB Connected: ${conn.connection.host}`);
+    } catch (error) {
+      console.log(error);
+      process.exit(1);
+    }
+  }
 
 
 const app=express()
@@ -22,6 +32,9 @@ res.sendFile(path.join(__dirname,'client','build','index.html'),function(err){
 })
 const PORT= process.env.PORT || 5000
 app.use("/api/auth", userRoutes);
-server.listen(PORT,(err)=>{
-    if(!err) console.log('listening on port....',PORT)
+
+connectDB().then(() => {
+    server.listen(PORT,(err)=>{
+        if(!err) console.log('listening on port....',PORT)
+    })
 })
